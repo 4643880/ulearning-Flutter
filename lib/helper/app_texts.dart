@@ -11,4 +11,7 @@ class AppTexts {
   static String get onBoardOneButton => "Next";
   static String get onBoardTwoButton => "Next";
   static String get onBoardThreeButton => "get started";
+  static String get login => "Login in";
+  static String get signInMsg => "or use your email acccount to login";
+  static String get email => "Email";
 }

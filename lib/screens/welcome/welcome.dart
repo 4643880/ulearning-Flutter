@@ -143,9 +143,13 @@ class WelcomeScreen extends StatelessWidget {
                 curve: Curves.easeIn,
               );
             } else {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => MyHomePage(),
-              ));
+              // Navigator.of(context).push(MaterialPageRoute(
+              //   builder: (context) => const MyHomePage(),
+              // ));
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                "/signInScreen",
+                (route) => false,
+              );
             }
           },
           child: Container(

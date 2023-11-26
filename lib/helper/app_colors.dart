@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColors {
   /// white background
   static const Color primaryBackground = Color.fromARGB(255, 255, 255, 255);
@@ -31,4 +33,13 @@ class AppColors {
   static const Color primaryElementStatus = Color.fromARGB(255, 88, 174, 127);
 
   static const Color primaryElementBg = Color.fromARGB(255, 238, 121, 99);
+
+  static const error = Color(0xffED1C1C);
+  static const generalOnDisable = Color(0xFF8C9198);
+
+  static const white = Colors.white;
+  static const black = Colors.black;
+  static const disable = Color(0xFFE8E8E8);
+  static const tertiary = Color(0xFFC7D1D9);
+  static const generalSecondary = Color(0xFF3C5A4E);
 }

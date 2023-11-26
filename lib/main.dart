@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/app_blocs.dart';
 import 'package:ulearning_app/app_events.dart';
 import 'package:ulearning_app/app_states.dart';
+import 'package:ulearning_app/screens/sign_in/sign_in.dart';
 import 'package:ulearning_app/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:ulearning_app/screens/welcome/welcome.dart';
 
@@ -20,9 +21,11 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
+          lazy: true,
           create: (context) => WelcomeBloc(),
         ),
         BlocProvider(
+          lazy: true,
           create: (context) => AppBlocs(),
         ),
       ],
@@ -31,19 +34,25 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'ULearning App',
           theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.deepPurple,
+            appBarTheme: const AppBarTheme(
+              elevation: 0,
+              backgroundColor: Colors.white,
             ),
             useMaterial3: true,
           ),
-          home: WelcomeScreen(),
+          // home: WelcomeScreen(),
+          routes: {
+            "/": (context) => const SignInScreen(),
+            "/myHomePage": (context) => const MyHomePage(),
+            "/signInScreen": (context) => const SignInScreen(),
+          },
         ),
       ),
     );
   }
 }
 
-// 1.51
+// 2.31
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});

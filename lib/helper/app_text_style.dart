@@ -46,8 +46,8 @@ class AppTextStyle {
 
   static final TextStyle bodyNormalRegular = TextStyle(
     fontSize: kFontSize16,
-    fontWeight: FontWeight.w400,
-    color: AppColors.primary_bg,
+    fontWeight: FontWeight.normal,
+    color: AppColors.primaryText,
     fontFamily: kInter,
   );
   static final TextStyle bodyNormalBold = TextStyle(
@@ -82,9 +82,16 @@ class AppTextStyle {
     fontFamily: kInter,
   );
   static final TextStyle miscBadge = TextStyle(
-    fontSize: 6.sp,
+    fontSize: kFontSize11,
     fontWeight: FontWeight.w600,
     color: AppColors.primary_bg,
+    fontFamily: kInter,
+  );
+
+  static final TextStyle signInText = TextStyle(
+    fontSize: kFontSize14,
+    color: Colors.grey.withOpacity(0.5),
+    fontWeight: FontWeight.normal,
     fontFamily: kInter,
   );
 }
