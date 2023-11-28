@@ -60,11 +60,14 @@ class CustomTextFieldNewWithLabel extends StatefulWidget {
     this.isLabelRequired = true,
     this.onEditingComplete,
     this.maxLength,
+    this.suffixPic,
+    this.prefixPic,
   }) : super(key: key);
   final String? labelText;
   final String? outerLabelText;
   final String? initialText;
   final String? suffixSvg, prefixSvg;
+  final String? suffixPic, prefixPic;
   final Widget? prefixWidget;
   final String? hintText;
   final String? prefixText;
@@ -147,12 +150,11 @@ class _CustomTextFieldNewWithLabelState
           initialValue: widget.initialText,
           controller: widget.controller,
           // textDirection: TextDirection.rtl,
-          style: widget.textStyle != null
-              ? widget.textStyle
-              : (widget.isDisable ?? false)
+          style: widget.textStyle ??
+              ((widget.isDisable ?? false)
                   ? AppTextStyle.bodyNormalRegular
                       .copyWith(color: AppColors.generalOnDisable)
-                  : AppTextStyle.bodyNormalRegular,
+                  : AppTextStyle.bodyNormalRegular),
           obscureText: (widget.obscure ?? false) ? hidePassword : false,
           onChanged: widget.onChanged,
           cursorColor: widget.cursorColor ?? AppColors.primaryElement,
@@ -238,35 +240,64 @@ class _CustomTextFieldNewWithLabelState
             labelText: widget.labelText,
             hintText: widget.hintText,
 
-            // prefixIcon: widget.prefixSvg != null
-            //     ? Padding(
-            //         padding: widget.prefixPadding ??
-            //             EdgeInsets.only(
-            //               top: 0.h,
-            //               bottom: 0.h,
-            //               left: 0.w,
-            //             ),
-            //         child: IconButton(
-            //           onPressed: widget.prefixOnTap,
-            //           splashRadius: 20.h,
-            //           icon: SvgPicture.asset(
-            //             widget.prefixSvg!,
-            //             height: widget.prefixHeight != null
-            //                 ? widget.prefixHeight!.h
-            //                 : 24.h,
-            //             width: widget.prefixWidth != null
-            //                 ? widget.prefixWidth!.h
-            //                 : 24.h,
-            //             color: widget.prefixIconColor ?? AppColors.generalSecondary,
-            //             //   color: widget.focusNode != null
-            //             //       ? widget.focusNode!.hasFocus
-            //             //           ? AppColors.mainPrimary90
-            //             //           :AppColors.mainBlack60
-            //             //       : widget.prefixIconColor??AppColors.mainBlack60,
-            //           ),
-            //         ),
-            //       )
-            //     : null,
+            prefixIcon: widget.prefixSvg != null
+                ? Padding(
+                    padding: widget.prefixPadding ??
+                        EdgeInsets.only(
+                          top: 0.h,
+                          bottom: 0.h,
+                          left: 0.w,
+                        ),
+                    child: IconButton(
+                      onPressed: widget.prefixOnTap,
+                      splashRadius: 20.h,
+                      icon: SvgPicture.asset(
+                        widget.prefixSvg!,
+                        height: widget.prefixHeight != null
+                            ? widget.prefixHeight!.h
+                            : 24.h,
+                        width: widget.prefixWidth != null
+                            ? widget.prefixWidth!.h
+                            : 24.h,
+                        color: widget.prefixIconColor ??
+                            AppColors.generalSecondary,
+                        //   color: widget.focusNode != null
+                        //       ? widget.focusNode!.hasFocus
+                        //           ? AppColors.mainPrimary90
+                        //           :AppColors.mainBlack60
+                        //       : widget.prefixIconColor??AppColors.mainBlack60,
+                      ),
+                    ),
+                  )
+                : widget.prefixPic != null
+                    ? Padding(
+                        padding: widget.prefixPadding ??
+                            EdgeInsets.only(
+                              top: 0.h,
+                              bottom: 0.h,
+                              left: 0.w,
+                            ),
+                        child: IconButton(
+                          onPressed: widget.prefixOnTap,
+                          splashRadius: 20.h,
+                          icon: Image.asset(
+                            widget.prefixPic!,
+                            height: widget.prefixHeight != null
+                                ? widget.prefixHeight!.h
+                                : 24.h,
+                            width: widget.prefixWidth != null
+                                ? widget.prefixWidth!.h
+                                : 24.h,
+                            color: widget.prefixIconColor ?? AppColors.black,
+                            //   color: widget.focusNode != null
+                            //       ? widget.focusNode!.hasFocus
+                            //           ? AppColors.mainPrimary90
+                            //           :AppColors.mainBlack60
+                            //       : widget.prefixIconColor??AppColors.mainBlack60,
+                          ),
+                        ),
+                      )
+                    : null,
             suffixIconConstraints:
                 BoxConstraints(minHeight: 20.h, minWidth: 20.w),
             suffixIcon:

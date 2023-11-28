@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/components/custom_spacer.dart';
 import 'package:ulearning_app/components/custom_text_field_with_lable.dart';
+import 'package:ulearning_app/helper/app_assets.dart';
 import 'package:ulearning_app/helper/app_text_style.dart';
 import 'package:ulearning_app/helper/app_texts.dart';
 import 'package:ulearning_app/screens/sign_in/components/app_bar.dart';
@@ -41,7 +42,7 @@ class SignInScreen extends StatelessWidget {
                 // ================================================
                 // Input Fields
                 // ================================================
-                ReuseableTextField(),
+                const ReuseableTextField(),
               ],
             ),
           ),
@@ -66,12 +67,51 @@ class ReuseableTextField extends StatelessWidget {
           SignInReusableTextWidget(
             message: AppTexts.email,
           ),
-          CustomTextFieldNewWithLabel(
-            onSaved: (newValue) {},
-            validator: (value) {},
-            borderRadius: 20,
-            filled: true,
-          )
+          Container(
+            width: 325.w,
+            height: 50.h,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(15.w),
+              ),
+              border: Border.all(
+                color: Colors.black,
+              ),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 16.w,
+                  margin: EdgeInsets.only(left: 17.w),
+                  height: 16.w,
+                  child: Image.asset(AppAssets.personIcon),
+                ),
+                SizedBox(
+                  width: 270.w,
+                  height: 50.h,
+                  child: TextField(
+                    keyboardType: TextInputType.multiline,
+                    decoration: InputDecoration(
+                      hintText: "Enter your email address",
+                      border: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                      ),
+                      disabledBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                      ),
+                      focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                      ),
+                      hintStyle: TextStyle(
+                        color: Colors.grey.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );

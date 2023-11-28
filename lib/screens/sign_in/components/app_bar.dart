@@ -5,6 +5,7 @@ import 'package:ulearning_app/helper/app_texts.dart';
 
 AppBar signInAppBar() {
   return AppBar(
+    centerTitle: true,
     title: Text(
       AppTexts.login,
       style: AppTextStyle.bodyNormalRegular,
