@@ -14,4 +14,7 @@ class AppTexts {
   static String get login => "Login in";
   static String get signInMsg => "or use your email acccount to login";
   static String get email => "Email";
+  static String get emailHint => "Enter your email address";
+  static String get passwordHint => "Enter your password";
+  static String get password => "Password";
 }

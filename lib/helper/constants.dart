@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const kInter = "Inter";
+const kAvenir = "Avenir";
 const assetsImage = "assets/images/";
 const assetsIcons = "assets/icons/";
 const assetsSvg = "assets/svgs/";

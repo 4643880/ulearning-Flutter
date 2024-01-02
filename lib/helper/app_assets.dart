@@ -12,4 +12,5 @@ class AppAssets {
   static const String facebookIcon = "${assetsIcons}facebook.png";
 
   static const String personIcon = "${assetsIcons}user.png";
+  static const String lockIcon = "${assetsIcons}lock.png";
 }
