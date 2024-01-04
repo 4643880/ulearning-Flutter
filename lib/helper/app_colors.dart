@@ -42,4 +42,5 @@ class AppColors {
   static const disable = Color(0xFFE8E8E8);
   static const tertiary = Color(0xFFC7D1D9);
   static const generalSecondary = Color(0xFF3C5A4E);
+  static const blue = Colors.blue;
 }

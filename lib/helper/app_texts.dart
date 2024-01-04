@@ -17,4 +17,6 @@ class AppTexts {
   static String get emailHint => "Enter your email address";
   static String get passwordHint => "Enter your password";
   static String get password => "Password";
+  static String get forgotPassword => "Forgot Password?";
+  static String get register => "Register";
 }

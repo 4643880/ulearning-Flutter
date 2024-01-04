@@ -101,4 +101,13 @@ class AppTextStyle {
     fontWeight: FontWeight.normal,
     fontSize: kFontSize14,
   );
+
+  static final TextStyle forgotPassword = TextStyle(
+    color: AppColors.black,
+    decoration: TextDecoration.underline,
+    decorationColor: Colors.blue,
+    // decorationColor: AppColors.primaryElement,
+    fontSize: kFontSize12,
+    fontFamily: kAvenir,
+  );
 }
