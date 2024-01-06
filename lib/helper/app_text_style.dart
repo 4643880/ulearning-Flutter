@@ -96,16 +96,16 @@ class AppTextStyle {
   );
 
   static final TextStyle textFieldText = TextStyle(
-    color: AppColors.black,
+    color: AppColors.primaryText,
     fontFamily: kAvenir,
     fontWeight: FontWeight.normal,
     fontSize: kFontSize14,
   );
 
   static final TextStyle forgotPassword = TextStyle(
-    color: AppColors.black,
+    color: AppColors.primaryText,
     decoration: TextDecoration.underline,
-    decorationColor: Colors.blue,
+    decorationColor: AppColors.primaryText,
     // decorationColor: AppColors.primaryElement,
     fontSize: kFontSize12,
     fontFamily: kAvenir,

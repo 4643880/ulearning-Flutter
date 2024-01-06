@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/components/custom_spacer.dart';
 import 'package:ulearning_app/helper/app_assets.dart';
+import 'package:ulearning_app/helper/app_colors.dart';
 import 'package:ulearning_app/helper/app_texts.dart';
 import 'package:ulearning_app/main.dart';
 import 'package:ulearning_app/screens/welcome/bloc/welcome_blocs.dart';
@@ -64,14 +65,14 @@ class WelcomeScreen extends StatelessWidget {
                     ],
                   ),
                   Positioned(
-                    bottom: 100.h,
+                    bottom: 80.h,
                     child: DotsIndicator(
                       dotsCount: 3,
                       position: state.page,
                       mainAxisAlignment: MainAxisAlignment.center,
                       decorator: DotsDecorator(
-                        color: Colors.grey,
-                        activeColor: Colors.blue,
+                        color: AppColors.primaryThirdElementText,
+                        activeColor: AppColors.primaryElement,
                         activeSize: const Size(33, 8.0),
                         size: const Size.square(8.0),
                         activeShape: RoundedRectangleBorder(
@@ -111,7 +112,7 @@ class WelcomeScreen extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: Colors.black,
+              color: AppColors.primaryText,
               fontSize: 24.sp,
               fontWeight: FontWeight.normal,
             ),
@@ -125,7 +126,7 @@ class WelcomeScreen extends StatelessWidget {
           child: Text(
             subtitle,
             style: TextStyle(
-              color: Colors.black.withOpacity(0.5),
+              color: AppColors.primarySecondaryElementText,
               fontSize: 14.sp,
               fontWeight: FontWeight.normal,
             ),
@@ -159,7 +160,7 @@ class WelcomeScreen extends StatelessWidget {
             width: 325.w,
             height: 50.h,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: AppColors.primaryElement,
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.1),

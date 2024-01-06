@@ -6,10 +6,15 @@ import 'package:ulearning_app/helper/app_text_style.dart';
 class CustomButtonWidget extends StatelessWidget {
   final Function() onTap;
   final String text;
+  final Color? color;
+  final Color? textColor;
+
   const CustomButtonWidget({
     super.key,
     required this.onTap,
     required this.text,
+    this.color = AppColors.primaryElement,
+    this.textColor = AppColors.primaryBackground,
   });
 
   @override
@@ -21,7 +26,12 @@ class CustomButtonWidget extends StatelessWidget {
         width: 325.w,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: AppColors.blue,
+          color: color,
+          border: Border.all(
+            color: text.toLowerCase() == "register"
+                ? AppColors.primaryFourthElementText
+                : Colors.transparent,
+          ),
           borderRadius: BorderRadius.circular(15.r),
           boxShadow: [
             BoxShadow(
@@ -35,7 +45,7 @@ class CustomButtonWidget extends StatelessWidget {
         child: Text(
           text,
           style: AppTextStyle.bodyNormalRegular.copyWith(
-            color: AppColors.white,
+            color: textColor,
           ),
           textAlign: TextAlign.center,
         ),

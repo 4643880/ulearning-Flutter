@@ -31,6 +31,18 @@ class MyApp extends StatelessWidget {
       ],
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
+          // builder: (context, child) {
+          //   ScreenUtil.init(
+          //     context,
+          //     designSize: const Size(390, 844),
+          //   );
+          //   child = const SignInScreen();
+          //   return MediaQuery(
+          //     data: MediaQuery.of(context)
+          //         .copyWith(textScaler: TextScaler.linear(1.sp)),
+          //     child: child,
+          //   );
+          // },
           debugShowCheckedModeBanner: false,
           title: 'ULearning App',
           theme: ThemeData(
@@ -52,7 +64,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// 3.03.35
+// 3.22.00
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});

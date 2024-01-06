@@ -4,8 +4,8 @@ import 'package:ulearning_app/components/common_button.dart';
 import 'package:ulearning_app/components/custom_my_reuseable_textfield.dart';
 import 'package:ulearning_app/components/custom_spacer.dart';
 import 'package:ulearning_app/helper/app_assets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/helper/app_colors.dart';
-import 'package:ulearning_app/helper/app_text_style.dart';
 import 'package:ulearning_app/helper/app_texts.dart';
 import 'package:ulearning_app/helper/constants.dart';
 import 'package:ulearning_app/screens/sign_in/components/app_bar.dart';
@@ -45,7 +45,7 @@ class SignInScreen extends StatelessWidget {
                   // ================================================
                   // Space
                   // ================================================
-                  VerticalSpacer(space: 66.h),
+                  VerticalSpacer(space: 36.h),
                   // ================================================
                   // Input Fields Email & Password
                   // ================================================
@@ -82,6 +82,8 @@ class SignInScreen extends StatelessWidget {
                   CustomButtonWidget(
                     onTap: () {},
                     text: AppTexts.register,
+                    color: AppColors.primaryBackground,
+                    textColor: AppColors.primaryText,
                   ),
                 ],
               ),

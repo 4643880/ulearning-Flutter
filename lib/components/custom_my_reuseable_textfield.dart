@@ -5,6 +5,7 @@ import 'package:ulearning_app/helper/app_colors.dart';
 import 'package:ulearning_app/helper/app_text_style.dart';
 import 'package:ulearning_app/helper/app_texts.dart';
 import 'package:ulearning_app/screens/sign_in/components/custom_signin_text_message.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ReuseableTextField extends StatelessWidget {
   final String outerLabel;
@@ -39,7 +40,7 @@ class ReuseableTextField extends StatelessWidget {
               Radius.circular(15.w),
             ),
             border: Border.all(
-              color: Colors.black,
+              color: AppColors.primaryFourthElementText,
             ),
           ),
           child: Row(
@@ -74,8 +75,8 @@ class ReuseableTextField extends StatelessWidget {
                     focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.transparent),
                     ),
-                    hintStyle: TextStyle(
-                      color: Colors.grey.withOpacity(0.5),
+                    hintStyle: const TextStyle(
+                      color: AppColors.primarySecondaryElementText,
                     ),
                   ),
                 ),
